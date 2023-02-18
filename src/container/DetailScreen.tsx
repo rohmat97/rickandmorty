@@ -9,6 +9,7 @@ import {
 import React, { useEffect } from "react";
 import FontAwesome5 from "react-native-vector-icons/FontAwesome5";
 import EmptyDetails from "../component/EmptyDetails";
+import LektonText from "../component/LektonText";
 
 const DetailScreen = (props: any) => {
   const { route, navigation } = props;
@@ -24,7 +25,7 @@ const DetailScreen = (props: any) => {
               <FontAwesome5 name={"arrow-left"} color="white" size={16} />
             </TouchableOpacity>
 
-            <Text style={styles.header}>{paramsName}</Text>
+            <LektonText style={styles.header}>{paramsName}</LektonText>
           </>
         ),
       });
@@ -48,6 +49,6 @@ const styles = StyleSheet.create({
     color: "white",
     marginLeft: 32,
     fontSize: 20,
-    fontWeight: "700",
+    // fontWeight: "700",
   },
 });

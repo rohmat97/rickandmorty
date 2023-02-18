@@ -8,9 +8,20 @@ import {
   StatusBar,
 } from "react-native";
 import EmptyContent from "../component/EmptyContent";
+import LektonText from "../component/LektonText";
 
 function HomeScreen(props: any) {
   const { navigation } = props;
+  useEffect(() => {
+    navigation.setOptions({
+      title: "",
+      headerLeft: () => (
+        <>
+          <LektonText style={styles.header}>Characters</LektonText>
+        </>
+      ),
+    });
+  }, []);
 
   return (
     <View style={styles.container}>
@@ -36,5 +47,9 @@ export default HomeScreen;
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+  },
+  header: {
+    color: "white",
+    fontSize: 20,
   },
 });
