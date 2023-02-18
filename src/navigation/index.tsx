@@ -14,13 +14,9 @@ const RootNavigation = () => {
           name="Home"
           component={HomeScreen}
           options={{
-            title: "Characters",
             headerStyle: {
               backgroundColor: "#5D5FEF",
             },
-            // headerTitleStyle: {
-            //   fontSize: 20,
-            // },
             headerTintColor: "#fff",
           }}
         />
