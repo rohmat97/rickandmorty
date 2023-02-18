@@ -1,11 +1,20 @@
-import * as React from "react";
-import { View, Text, StyleSheet, Button } from "react-native";
+import React, { useEffect } from "react";
+import {
+  View,
+  Text,
+  StyleSheet,
+  Button,
+  FlatList,
+  StatusBar,
+} from "react-native";
+import EmptyContent from "../component/EmptyContent";
 
 function HomeScreen(props: any) {
   const { navigation } = props;
+
   return (
     <View style={styles.container}>
-      <Text>Home Screen</Text>
+      <StatusBar backgroundColor={"#5D5FEF"} />
       <Button
         title="Go to Details"
         onPress={() =>
@@ -13,6 +22,10 @@ function HomeScreen(props: any) {
             name: "Morty Smith",
           })
         }
+      />
+      <FlatList
+        data={[{}, {}, {}, {}, {}, {}, {}]}
+        renderItem={() => <EmptyContent />}
       />
     </View>
   );
@@ -23,7 +36,5 @@ export default HomeScreen;
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    alignItems: "center",
-    justifyContent: "center",
   },
 });

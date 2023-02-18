@@ -13,9 +13,27 @@ const RootNavigation = () => {
         <Stack.Screen
           name="Home"
           component={HomeScreen}
-          options={{ title: "Characters" }}
+          options={{
+            title: "Characters",
+            headerStyle: {
+              backgroundColor: "#5D5FEF",
+            },
+            // headerTitleStyle: {
+            //   fontSize: 20,
+            // },
+            headerTintColor: "#fff",
+          }}
         />
-        <Stack.Screen name="Details" component={DetailScreen} />
+        <Stack.Screen
+          name="Details"
+          component={DetailScreen}
+          options={{
+            headerStyle: {
+              backgroundColor: "#5D5FEF",
+            },
+            headerTintColor: "#fff",
+          }}
+        />
       </Stack.Navigator>
     </NavigationContainer>
   );
