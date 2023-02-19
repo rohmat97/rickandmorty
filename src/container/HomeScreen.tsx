@@ -45,7 +45,7 @@ const HomeScreen: FunctionComponent = (props: any) => {
       <StatusBar backgroundColor={"#5D5FEF"} />
       {loading && <ActivityIndicator size={32} />}
 
-      {!loading && data ? (
+      {data ? (
         <FlatList
           data={data}
           renderItem={({ item }) => (
