@@ -1,4 +1,5 @@
-import React, { useEffect } from "react";
+import axios from "axios";
+import React, { FunctionComponent, useEffect, useState } from "react";
 import {
   View,
   Text,
@@ -7,11 +8,21 @@ import {
   FlatList,
   StatusBar,
 } from "react-native";
+import ContentCharacters from "../component/ContentCharacters";
 import EmptyContent from "../component/EmptyContent";
 import LektonText from "../component/LektonText";
+import { ICharacters, IResult } from "../model/Characters";
 
-function HomeScreen(props: any) {
+const HomeScreen: FunctionComponent = (props: any) => {
   const { navigation } = props;
+
+  const [data, setData]: [any, (data: ICharacters) => void] = useState();
+  const [page, setPage]: [number, (page: number) => void] = useState(1);
+
+  const [loading, setLoading]: [boolean, (loading: boolean) => void] =
+    useState<boolean>(true);
+  const [error, setError]: [string, (error: string) => void] = useState("");
+
   useEffect(() => {
     navigation.setOptions({
       title: "",
@@ -21,26 +32,44 @@ function HomeScreen(props: any) {
         </>
       ),
     });
+
+    axios
+      .get("https://rickandmortyapi.com/api/character/?page=" + page)
+      .then((response) => {
+        setTimeout(() => {
+          setData(response.data.results);
+          setLoading(false);
+        }, 1500);
+      })
+      .catch((err) => {
+        const error =
+          err.response.status === 404
+            ? "Resource Not found"
+            : "An unexpected error has occurred";
+        setError(error);
+        setLoading(false);
+      });
   }, []);
 
   return (
     <View style={styles.container}>
       <StatusBar backgroundColor={"#5D5FEF"} />
-      <Button
-        title="Go to Details"
-        onPress={() =>
-          navigation.navigate("Details", {
-            name: "Morty Smith",
-          })
-        }
-      />
-      <FlatList
-        data={[{}, {}, {}, {}, {}, {}, {}]}
-        renderItem={() => <EmptyContent />}
-      />
+      {!loading && data ? (
+        <FlatList
+          data={data}
+          renderItem={({ item }) => <ContentCharacters item={item} />}
+        />
+      ) : error ? (
+        <LektonText style={styles.header}>{error}</LektonText>
+      ) : (
+        <FlatList
+          data={[{}, {}, {}, {}, {}, {}, {}]}
+          renderItem={() => <EmptyContent />}
+        />
+      )}
     </View>
   );
-}
+};
 
 export default HomeScreen;
 

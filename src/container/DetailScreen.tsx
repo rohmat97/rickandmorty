@@ -6,12 +6,12 @@ import {
   TouchableOpacity,
   View,
 } from "react-native";
-import React, { useEffect } from "react";
+import React, { FunctionComponent, useEffect } from "react";
 import FontAwesome5 from "react-native-vector-icons/FontAwesome5";
 import EmptyDetails from "../component/EmptyDetails";
 import LektonText from "../component/LektonText";
 
-const DetailScreen = (props: any) => {
+const DetailScreen: FunctionComponent = (props: any) => {
   const { route, navigation } = props;
   const paramsName = route?.params?.name;
 

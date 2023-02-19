@@ -6,7 +6,7 @@ import DetailScreen from "../container/DetailScreen";
 
 const Stack = createNativeStackNavigator();
 
-const RootNavigation = () => {
+const RootNavigation: React.FunctionComponent = () => {
   return (
     <NavigationContainer>
       <Stack.Navigator>

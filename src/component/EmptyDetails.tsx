@@ -1,7 +1,7 @@
 import { Image, StyleSheet, Text, View } from "react-native";
-import React from "react";
+import React, { FunctionComponent } from "react";
 
-const EmptyDetails = () => {
+const EmptyDetails: FunctionComponent = () => {
   return (
     <View style={{ flex: 1 }}>
       <View

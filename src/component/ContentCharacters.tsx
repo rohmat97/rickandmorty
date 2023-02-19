@@ -1,19 +1,22 @@
-import { StyleSheet, Text, View } from "react-native";
+import { Image, StyleSheet, Text, View } from "react-native";
 import React, { FunctionComponent } from "react";
+import LektonText from "./LektonText";
 
-const EmptyContent: FunctionComponent = () => {
+const ContentCharacters: FunctionComponent<any> = ({ item }) => {
+  const { name, image, species } = item;
+  console.log("item", item);
   return (
     <View style={styles.container}>
-      <View style={styles.imageBlur} />
+      <Image source={{ uri: image }} style={styles.imageBlur} />
       <View style={styles.menuContent}>
-        <View style={styles.headerTextBlur} />
-        <View style={styles.descTextBlur} />
+        <LektonText>{name}</LektonText>
+        <LektonText>{species}</LektonText>
       </View>
     </View>
   );
 };
 
-export default EmptyContent;
+export default ContentCharacters;
 
 const styles = StyleSheet.create({
   container: {
