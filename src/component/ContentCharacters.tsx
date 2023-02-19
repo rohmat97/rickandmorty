@@ -1,18 +1,20 @@
 import { Image, StyleSheet, TouchableOpacity, View } from "react-native";
 import React, { FunctionComponent } from "react";
 import { LektonBold, LektonNormal } from "./LektonText";
-import { useNavigation } from "@react-navigation/native";
 
-const ContentCharacters: FunctionComponent<any> = ({ item }) => {
+const ContentCharacters: FunctionComponent<any> = ({ item, navigation }) => {
   const { name, image, species } = item;
-  const navigation = useNavigation();
+
+  const moveToDetails = () => {
+    navigation.navigate("Details", {
+      data: item,
+    });
+  };
+
   return (
     <TouchableOpacity
-      onPress={() =>
-        navigation.navigate("Details", {
-          data: item,
-        })
-      }
+      testID="testNavigateDetail"
+      onPress={() => moveToDetails()}
     >
       <View style={styles.container}>
         <Image source={{ uri: image }} style={styles.imageBlur} />

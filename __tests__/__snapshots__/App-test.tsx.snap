@@ -1,0 +1,439 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`test render component ComponentEpisode 1`] = `
+<View
+  style={
+    {
+      "flex": 1,
+      "flexDirection": "row",
+      "padding": 16,
+    }
+  }
+>
+  <View
+    style={
+      {
+        "flex": 1,
+        "height": 40,
+        "justifyContent": "space-between",
+        "marginLeft": 16,
+      }
+    }
+  >
+    <View
+      style={
+        {
+          "backgroundColor": "#C4C4C4",
+          "height": 16,
+          "width": 132,
+        }
+      }
+    />
+    <View
+      style={
+        {
+          "backgroundColor": "#C4C4C4",
+          "height": 16,
+          "width": 85,
+        }
+      }
+    />
+  </View>
+</View>
+`;
+
+exports[`test render component ContentCharacters 1`] = `
+<View
+  accessibilityState={
+    {
+      "busy": undefined,
+      "checked": undefined,
+      "disabled": undefined,
+      "expanded": undefined,
+      "selected": undefined,
+    }
+  }
+  accessibilityValue={
+    {
+      "max": undefined,
+      "min": undefined,
+      "now": undefined,
+      "text": undefined,
+    }
+  }
+  accessible={true}
+  collapsable={false}
+  focusable={true}
+  onClick={[Function]}
+  onResponderGrant={[Function]}
+  onResponderMove={[Function]}
+  onResponderRelease={[Function]}
+  onResponderTerminate={[Function]}
+  onResponderTerminationRequest={[Function]}
+  onStartShouldSetResponder={[Function]}
+  style={
+    {
+      "opacity": 1,
+    }
+  }
+  testID="testNavigateDetail"
+>
+  <View
+    style={
+      {
+        "flex": 1,
+        "flexDirection": "row",
+        "padding": 16,
+      }
+    }
+  >
+    <Image
+      source={
+        {
+          "uri": undefined,
+        }
+      }
+      style={
+        {
+          "backgroundColor": "#C4C4C4",
+          "height": 40,
+          "width": 40,
+        }
+      }
+    />
+    <View
+      style={
+        {
+          "flex": 1,
+          "height": 40,
+          "justifyContent": "space-between",
+          "marginLeft": 16,
+        }
+      }
+    >
+      <Text
+        style={
+          [
+            {
+              "fontFamily": "Lekton-Bold",
+            },
+            {
+              "color": "black",
+            },
+          ]
+        }
+      />
+      <Text
+        style={
+          [
+            {
+              "fontFamily": "Lekton-Regular",
+            },
+            undefined,
+          ]
+        }
+      />
+    </View>
+  </View>
+</View>
+`;
+
+exports[`test render component ContentDetails 1`] = `
+<RCTScrollView>
+  <View>
+    <View
+      style={
+        {
+          "flex": 1,
+        }
+      }
+    >
+      <Image
+        resizeMode="cover"
+        source={
+          {
+            "uri": undefined,
+          }
+        }
+        style={
+          {
+            "backgroundColor": "#C4C4C4",
+            "height": 375,
+            "width": "100%",
+          }
+        }
+      />
+      <View
+        style={
+          {
+            "margin": 16,
+          }
+        }
+      >
+        <Text
+          style={
+            [
+              {
+                "fontFamily": "Lekton-Bold",
+              },
+              {
+                "color": "black",
+                "fontSize": 20,
+              },
+            ]
+          }
+        />
+        <View
+          style={
+            {
+              "backgroundColor": "#EF5DA8",
+              "borderRadius": 4,
+              "height": 74,
+              "marginTop": 18,
+              "paddingLeft": 8,
+              "width": "100%",
+            }
+          }
+        >
+          <Text
+            style={
+              [
+                {
+                  "fontFamily": "Lekton-Regular",
+                },
+                {
+                  "color": "white",
+                },
+              ]
+            }
+          >
+            spesies: 
+          </Text>
+          <Text
+            style={
+              [
+                {
+                  "fontFamily": "Lekton-Regular",
+                },
+                {
+                  "color": "white",
+                },
+              ]
+            }
+          >
+            gender: 
+          </Text>
+          <Text
+            style={
+              [
+                {
+                  "fontFamily": "Lekton-Regular",
+                },
+                {
+                  "color": "white",
+                },
+              ]
+            }
+          >
+            status: 
+          </Text>
+        </View>
+        <View
+          style={
+            {
+              "alignSelf": "center",
+              "backgroundColor": "#C4C4C4",
+              "height": 1,
+              "marginTop": 36,
+              "width": 200,
+            }
+          }
+        />
+        <Text
+          style={
+            [
+              {
+                "fontFamily": "Lekton-Bold",
+              },
+              [
+                {
+                  "color": "black",
+                  "fontSize": 20,
+                },
+                {
+                  "fontSize": 20,
+                  "marginTop": 36,
+                },
+              ],
+            ]
+          }
+        >
+          Episodes
+        </Text>
+        <RCTScrollView
+          data={[]}
+          getItem={[Function]}
+          getItemCount={[Function]}
+          keyExtractor={[Function]}
+          onContentSizeChange={[Function]}
+          onLayout={[Function]}
+          onMomentumScrollBegin={[Function]}
+          onMomentumScrollEnd={[Function]}
+          onScroll={[Function]}
+          onScrollBeginDrag={[Function]}
+          onScrollEndDrag={[Function]}
+          removeClippedSubviews={false}
+          renderItem={[Function]}
+          scrollEnabled={false}
+          scrollEventThrottle={50}
+          stickyHeaderIndices={[]}
+          viewabilityConfigCallbackPairs={[]}
+        >
+          <View />
+        </RCTScrollView>
+      </View>
+    </View>
+  </View>
+</RCTScrollView>
+`;
+
+exports[`test render component empty content 1`] = `
+<View
+  style={
+    {
+      "flex": 1,
+      "flexDirection": "row",
+      "padding": 16,
+    }
+  }
+>
+  <View
+    style={
+      {
+        "backgroundColor": "#C4C4C4",
+        "height": 40,
+        "width": 40,
+      }
+    }
+  />
+  <View
+    style={
+      {
+        "flex": 1,
+        "height": 40,
+        "justifyContent": "space-between",
+        "marginLeft": 16,
+      }
+    }
+  >
+    <View
+      style={
+        {
+          "backgroundColor": "#C4C4C4",
+          "height": 16,
+          "width": 132,
+        }
+      }
+    />
+    <View
+      style={
+        {
+          "backgroundColor": "#C4C4C4",
+          "height": 16,
+          "width": 85,
+        }
+      }
+    />
+  </View>
+</View>
+`;
+
+exports[`test render component empty content detail 1`] = `
+<View
+  style={
+    {
+      "flex": 1,
+    }
+  }
+>
+  <View
+    style={
+      {
+        "backgroundColor": "#C4C4C4",
+        "height": 375,
+        "width": "100%",
+      }
+    }
+  />
+  <View
+    style={
+      {
+        "margin": 16,
+      }
+    }
+  >
+    <View
+      style={
+        {
+          "backgroundColor": "#C4C4C4",
+          "height": 16,
+          "marginTop": 10,
+          "width": 132,
+        }
+      }
+    />
+    <View
+      style={
+        {
+          "backgroundColor": "#C4C4C4",
+          "borderRadius": 4,
+          "height": 74,
+          "marginTop": 18,
+          "width": "100%",
+        }
+      }
+    />
+    <View
+      style={
+        {
+          "alignSelf": "center",
+          "backgroundColor": "#C4C4C4",
+          "height": 1,
+          "marginTop": 36,
+          "width": 200,
+        }
+      }
+    />
+  </View>
+</View>
+`;
+
+exports[`test render component text Lekton Bold 1`] = `
+<Text
+  style={
+    [
+      {
+        "fontFamily": "Lekton-Bold",
+      },
+      undefined,
+    ]
+  }
+>
+  LektonBold
+</Text>
+`;
+
+exports[`test render component text Lekton Regular 1`] = `
+<Text
+  style={
+    [
+      {
+        "fontFamily": "Lekton-Regular",
+      },
+      undefined,
+    ]
+  }
+>
+  LektonNormal
+</Text>
+`;

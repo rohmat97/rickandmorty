@@ -10,6 +10,7 @@ import {
 import ContentCharacters from "../component/ContentCharacters";
 import EmptyContent from "../component/EmptyContent";
 import { LektonBold } from "../component/LektonText";
+import getListCharacters from "../function/getListCharacters";
 
 const HomeScreen: FunctionComponent = (props: any) => {
   const { navigation } = props;
@@ -22,25 +23,9 @@ const HomeScreen: FunctionComponent = (props: any) => {
     useState<boolean>(true);
   const [error, setError]: [string, (error: string) => void] = useState("");
 
-  function getDataCharacters(params: number) {
+  function getDataCharacters(page: number) {
     setLoading(true);
-    axios
-      .get("https://rickandmortyapi.com/api/character/?page=" + params)
-      .then((response) => {
-        setTimeout(() => {
-          setData([...data, ...response.data.results]);
-          setLoading(false);
-          setMaxPage(response.data.info.pages);
-        }, 1500);
-      })
-      .catch((err) => {
-        const error =
-          err.response.status === 404
-            ? "Resource Not found"
-            : "An unexpected error has occurred";
-        setError(error);
-        setLoading(false);
-      });
+    getListCharacters(page, data, setData, setLoading, setMaxPage, setError);
   }
 
   useEffect(() => {
@@ -63,7 +48,9 @@ const HomeScreen: FunctionComponent = (props: any) => {
       {!loading && data ? (
         <FlatList
           data={data}
-          renderItem={({ item }) => <ContentCharacters item={item} />}
+          renderItem={({ item }) => (
+            <ContentCharacters item={item} navigation={navigation} />
+          )}
           onEndReachedThreshold={0.2}
           onEndReached={() => {
             if (page < maxPage) {

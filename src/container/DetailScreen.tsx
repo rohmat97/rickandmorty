@@ -17,10 +17,12 @@ const DetailScreen: FunctionComponent = (props: any) => {
         title: "",
         headerLeft: () => (
           <>
-            <TouchableOpacity onPress={() => navigation.pop()}>
+            <TouchableOpacity
+              testID="buttonTestBackToHome"
+              onPress={() => navigation.pop()}
+            >
               <FontAwesome5 name={"arrow-left"} color="white" size={16} />
             </TouchableOpacity>
-
             <LektonBold style={styles.header}>{name}</LektonBold>
           </>
         ),

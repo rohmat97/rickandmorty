@@ -1,15 +1,11 @@
 import { StyleSheet, View } from "react-native";
 import React, { FunctionComponent, useState } from "react";
 import { LektonBold, LektonNormal } from "./LektonText";
-import axios from "axios";
+import getDetailEpisode from "../function/getDetailEpisode";
 
 const ComponentEpisode: FunctionComponent<any> = ({ item }) => {
   const [episodes, setepisode] = useState();
-  axios.get(item).then((succ: any) =>
-    setTimeout(() => {
-      setepisode(succ.data);
-    }, 1000)
-  );
+  getDetailEpisode(item, setepisode);
   if (episodes) {
     const { name, episode, air_date }: any = episodes;
     if (name && episode && air_date) {
