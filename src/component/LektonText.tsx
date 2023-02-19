@@ -1,5 +1,5 @@
 import { Text, TextProps } from "react-native";
-import React, { FunctionComponent } from "react";
+import React from "react";
 
 const LektonBold = (
   props: JSX.IntrinsicAttributes &

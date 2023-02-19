@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View } from "react-native";
+import { StyleSheet, View } from "react-native";
 import React, { FunctionComponent, useState } from "react";
 import { LektonBold, LektonNormal } from "./LektonText";
 import axios from "axios";
@@ -10,7 +10,6 @@ const ComponentEpisode: FunctionComponent<any> = ({ item }) => {
       setepisode(succ.data);
     }, 1000)
   );
-  //   console.log("episode", episode);
   if (episodes) {
     const { name, episode, air_date }: any = episodes;
     if (name && episode && air_date) {
@@ -42,7 +41,6 @@ const styles = StyleSheet.create({
     flex: 1,
     flexDirection: "row",
     padding: 16,
-    // borderWidth: 1,
   },
   menuContent: {
     flex: 1,

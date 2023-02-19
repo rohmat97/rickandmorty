@@ -1,11 +1,4 @@
-import {
-  Button,
-  StatusBar,
-  StyleSheet,
-  Text,
-  TouchableOpacity,
-  View,
-} from "react-native";
+import { StatusBar, StyleSheet, TouchableOpacity, View } from "react-native";
 import React, { FunctionComponent, useEffect, useState } from "react";
 import FontAwesome5 from "react-native-vector-icons/FontAwesome5";
 import EmptyDetails from "../component/EmptyDetails";

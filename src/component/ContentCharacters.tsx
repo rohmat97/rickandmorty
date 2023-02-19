@@ -1,4 +1,4 @@
-import { Image, StyleSheet, Text, TouchableOpacity, View } from "react-native";
+import { Image, StyleSheet, TouchableOpacity, View } from "react-native";
 import React, { FunctionComponent } from "react";
 import { LektonBold, LektonNormal } from "./LektonText";
 import { useNavigation } from "@react-navigation/native";

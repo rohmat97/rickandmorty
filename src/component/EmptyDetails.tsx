@@ -1,4 +1,4 @@
-import { Image, StyleSheet, Text, View } from "react-native";
+import { StyleSheet, View } from "react-native";
 import React, { FunctionComponent } from "react";
 
 const EmptyDetails: FunctionComponent = () => {

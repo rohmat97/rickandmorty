@@ -1,14 +1,6 @@
-import {
-  FlatList,
-  Image,
-  ScrollView,
-  StyleSheet,
-  Text,
-  View,
-} from "react-native";
-import React, { FunctionComponent, useState } from "react";
+import { FlatList, Image, ScrollView, StyleSheet, View } from "react-native";
+import React, { FunctionComponent } from "react";
 import { LektonBold, LektonNormal } from "./LektonText";
-import axios from "axios";
 import ComponentEpisode from "./ComponentEpisode";
 
 const ContentDetails: FunctionComponent<any> = ({ detailData }) => {
