@@ -6,17 +6,20 @@ import {
   TouchableOpacity,
   View,
 } from "react-native";
-import React, { FunctionComponent, useEffect } from "react";
+import React, { FunctionComponent, useEffect, useState } from "react";
 import FontAwesome5 from "react-native-vector-icons/FontAwesome5";
 import EmptyDetails from "../component/EmptyDetails";
-import LektonText from "../component/LektonText";
+import ContentDetails from "../component/ContentDetails";
+import { LektonBold } from "../component/LektonText";
 
 const DetailScreen: FunctionComponent = (props: any) => {
+  const [visible, setvisible] = useState(false);
   const { route, navigation } = props;
-  const paramsName = route?.params?.name;
+  const detailData = route?.params?.data;
+  const { name } = detailData;
 
   useEffect(() => {
-    if (paramsName)
+    if (detailData)
       navigation.setOptions({
         title: "",
         headerLeft: () => (
@@ -25,16 +28,19 @@ const DetailScreen: FunctionComponent = (props: any) => {
               <FontAwesome5 name={"arrow-left"} color="white" size={16} />
             </TouchableOpacity>
 
-            <LektonText style={styles.header}>{paramsName}</LektonText>
+            <LektonBold style={styles.header}>{name}</LektonBold>
           </>
         ),
       });
-  }, [paramsName]);
+    setTimeout(() => {
+      setvisible(true);
+    }, 1500);
+  }, [detailData]);
 
   return (
     <View style={styles.container}>
       <StatusBar backgroundColor={"#5D5FEF"} />
-      <EmptyDetails />
+      {visible ? <ContentDetails detailData={detailData} /> : <EmptyDetails />}
     </View>
   );
 };

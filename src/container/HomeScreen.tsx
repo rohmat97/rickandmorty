@@ -10,7 +10,7 @@ import {
 } from "react-native";
 import ContentCharacters from "../component/ContentCharacters";
 import EmptyContent from "../component/EmptyContent";
-import LektonText from "../component/LektonText";
+import { LektonBold } from "../component/LektonText";
 import { ICharacters, IResult } from "../model/Characters";
 
 const HomeScreen: FunctionComponent = (props: any) => {
@@ -28,7 +28,7 @@ const HomeScreen: FunctionComponent = (props: any) => {
       title: "",
       headerLeft: () => (
         <>
-          <LektonText style={styles.header}>Characters</LektonText>
+          <LektonBold style={styles.header}>Characters</LektonBold>
         </>
       ),
     });
@@ -60,7 +60,7 @@ const HomeScreen: FunctionComponent = (props: any) => {
           renderItem={({ item }) => <ContentCharacters item={item} />}
         />
       ) : error ? (
-        <LektonText style={styles.header}>{error}</LektonText>
+        <LektonBold style={styles.header}>{error}</LektonBold>
       ) : (
         <FlatList
           data={[{}, {}, {}, {}, {}, {}, {}]}

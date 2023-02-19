@@ -1,7 +1,7 @@
 import { Text, TextProps } from "react-native";
 import React, { FunctionComponent } from "react";
 
-const LektonText = (
+const LektonBold = (
   props: JSX.IntrinsicAttributes &
     JSX.IntrinsicClassAttributes<Text> &
     Readonly<TextProps>
@@ -10,5 +10,14 @@ const LektonText = (
     {props.children}
   </Text>
 );
+const LektonNormal = (
+  props: JSX.IntrinsicAttributes &
+    JSX.IntrinsicClassAttributes<Text> &
+    Readonly<TextProps>
+) => (
+  <Text {...props} style={[{ fontFamily: "Lekton-Regular" }, props.style]}>
+    {props.children}
+  </Text>
+);
 
-export default LektonText;
+export { LektonBold, LektonNormal };
